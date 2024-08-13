@@ -5,6 +5,9 @@ import java.time.LocalTime;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
@@ -14,14 +17,13 @@ import jakarta.persistence.Table;
 public class Transaction {
 
 	@OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
-	@JoinColumn(name="account_id")
-	@Column(name = "sender_id")
+	@JoinColumn(name="sender_id")
     private Account SenderAccount;
 	
 	@OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
-	@JoinColumn(name="account_id")
-	@Column(name = "receiver_id")
+	@JoinColumn(name="receiver_id")
     private Account ReceiverAccount;
+	
 	
 	@Column(name = "transaction_time")
     private LocalTime time;
@@ -29,6 +31,8 @@ public class Transaction {
 	@Column(name = "amount")
     private long Amount;
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "transaction_id")
     private long TransactionId;
 	

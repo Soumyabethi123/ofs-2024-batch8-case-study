@@ -10,28 +10,23 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ofss.main.domain.Customer;
-import com.ofss.main.service.CustomerService;
+import com.ofss.main.domain.Login;
+import com.ofss.main.service.LoginService;
 
 @CrossOrigin("*")
-@RequestMapping("bankingcrudapi")
+@RequestMapping("loginapi")
 @RestController
 @Component
-public class BankingMainController {
+public class LoginController {
 
 	@Autowired
-	public CustomerService customerservice;
+	public LoginService loginService;
 	
-	// http://localhost:8080/bankingcrudapi/customer
-	@GetMapping("customer/{username}")
-	public Customer getCustomerFromDB(@PathVariable String username) {
-			
-		return customerservice.getCustomerByUsername(username);
-	}
-	
-	@PostMapping("customer")
-	public Customer addNewCustomer(@RequestBody Customer customer) {
+	// http://localhost:8080/loginapi/login
+	@GetMapping("login/{username}")
+	public Login getLoginfromDB(@PathVariable String username) {
 		
-		return customerservice.addNewCustomer(customer);
+		return loginService.getLoginByUsername(username);
 	}
+
 }

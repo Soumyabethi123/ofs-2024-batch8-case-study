@@ -2,6 +2,8 @@ package com.ofss.main.domain;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -43,6 +45,7 @@ public class Customer {
     private String EmailId;
 	
 	@Column(name = "date_of_birth")
+	//@JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate DateofBirth;
 	
 	@Column(name = "customer_status")
@@ -53,7 +56,11 @@ public class Customer {
     private Login login;
     
 
-    public Customer(int id,String fname,String Lname,String add,String state,String city,long mob,String email,LocalDate dob,String status,Login login){
+    public Customer() {
+		System.out.println("Default Constructor of Customer");
+	}
+
+	public Customer(int id,String fname,String Lname,String add,String state,String city,long mob,String email,LocalDate dob,String status,Login login){
 
         this.customerID=id;
         this.FirstName=fname;

@@ -1,5 +1,7 @@
 package com.ofss.main.service;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,10 +16,15 @@ public class CustomerServiceImpl implements CustomerService {
 	
 	@Override
 	public Customer getCustomerByUsername(String Username) {
-		// TODO Auto-generated method stub
 		
+		return customerRepository.findByLogin_username(Username);
+	
+	}
+
+	@Override
+	public Customer addNewCustomer(Customer customer) {
 		
-		return null;
+		return customerRepository.save(customer);
 	}
 
 	

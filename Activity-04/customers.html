@@ -1,0 +1,100 @@
+<!--
+ Copyright (c) 2014, 2024, Oracle and/or its affiliates.
+ Licensed under The Universal Permissive License (UPL), Version 1.0
+ as shown at https://oss.oracle.com/licenses/upl/
+ -->
+<div class="oj-hybrid-padding">
+
+  <h2>Department Table</h2>
+ 
+  <div id="sampleDemo" class="demo-padding demo-container">
+    <div id="componentDemoContent" style="width: 1px; min-width: 100%;">
+              
+      <oj-table
+        id="table"
+        aria-label="Departments Table"
+        accessibility.row-header="depName"
+        data="[[dataprovider]]"
+        selection-mode='{"row": "multiple", "column": "multiple"}'
+        dnd='{"reorder": {"columns": "enabled"}}'
+        scroll-policy="loadMoreOnScroll"
+        scroll-policy-options='{"fetchSize": 10}'
+        columns='[{"headerText": "Department Id", 
+                   "field": "DepartmentId",
+                   "headerClassName": "oj-sm-only-hide",
+                   "className": "oj-sm-only-hide",
+                   "resizable": "enabled",
+                   "id": "depId"},
+                  {"headerText": "Department Name", 
+                   "field": "DepartmentName",
+                   "resizable": "enabled",
+                   "id": "depName"},
+                  {"headerText": "Location Id", 
+                   "field": "LocationId",
+                   "headerClassName": "oj-sm-only-hide",
+                   "className": "oj-sm-only-hide",
+                   "resizable": "enabled",
+                   "id": "locId"},
+                  {"headerText": "Manager Id", 
+                   "field": "ManagerId",
+                   "resizable": "enabled",
+                   "id": "manId"},
+                  {"headerText": "Employee Count", 
+                   "field": "EmployeeCount",
+                   "headerClassName": "oj-md-down-hide",
+                   "className": "oj-md-down-hide",
+                   "resizable": "enabled",
+                   "id": "empCount"}]'
+        class="demo-table-container"></oj-table>
+      
+      
+      
+    </div>
+  </div>
+
+
+
+  <h2>List View</h2>
+
+  <div id="sampleDemo" class="demo-padding demo-container">
+    <div id="componentDemoContent" style="width: 1px; min-width: 100%;">
+              
+      <oj-c-list-view
+        aria-label="Basic list"
+        data="[[dataProvider]]"
+        id="listview">
+        <template slot="itemTemplate" data-oj-as="item">
+          <oj-c-list-item-layout>
+            <span class="oj-typography-body-md oj-text-color-primary">
+              <oj-bind-text value="[[item.item.data.name]]"></oj-bind-text>
+            </span>
+            <oj-c-avatar slot="leading" size="xs" src="[[item.item.data.image]]"></oj-c-avatar>
+            <span slot="secondary" class="oj-typography-body-sm oj-text-color-secondary">
+              <oj-bind-text value="[[item.item.data.title]]"></oj-bind-text>
+            </span>
+          </oj-c-list-item-layout>
+        </template>
+      </oj-c-list-view>
+      
+      
+    </div>
+  </div>
+
+
+
+  <h2>Page Control</h2>
+
+  <div id="sampleDemo" class="demo-padding demo-container">
+    <div id="componentDemoContent" style="width: 1px; min-width: 100%;">
+              
+      <div id="filmstrip-navdots-example">
+        <oj-module
+          config="[[ModuleElementUtils.createConfig({name:'filmStrip/filmStripNavDots'})]]"></oj-module>
+      </div>
+      
+      
+      
+    </div>
+  </div>
+
+</div>

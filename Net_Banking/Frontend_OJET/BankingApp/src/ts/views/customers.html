@@ -1,0 +1,106 @@
+<!--
+ Copyright (c) 2014, 2024, Oracle and/or its affiliates.
+ Licensed under The Universal Permissive License (UPL), Version 1.0
+ as shown at https://oss.oracle.com/licenses/upl/
+ -->
+
+<style>
+ .oj-c-form-layout > * {
+  margin-bottom: 16px; /* Consistent bottom margin for spacing between rows */
+  box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+}
+/* Ensure equal margins are applied to items in specific layout */
+
+
+</style>
+<div class="oj-hybrid-padding">
+  
+  <div id="form-container">
+    <h2 class="oj-typography-heading-xs">Customer Registration</h2>
+
+    <oj-c-form-layout id="personal-information" direction="row" max-columns="2" >
+
+      <oj-c-input-text
+        id="Username"
+        label-hint="Username"
+        required="true"
+        value="{{username}}"></oj-c-input-text>
+
+      <oj-c-input-text
+        id="Password"
+        label-hint="Password"
+        required="true"
+        value="{{password}}"></oj-c-input-text>
+
+      <oj-c-input-text
+        id="firstname"
+        label-hint="First Name"
+        required="true"
+        value="{{firstname}}"></oj-c-input-text>
+
+      <oj-c-input-text
+        id="lastname"
+        label-hint="Last Name"
+        required="true"
+        value="{{lastname}}"></oj-c-input-text>
+
+      <oj-c-input-text
+        id="address"
+        label-hint="Address"
+        autocomplete="off"
+        value="{{address}}"></oj-c-input-text>
+
+      <oj-c-form-layout direction="row" columns="2">
+        <oj-c-input-text
+          id="state"
+          label-hint="State"
+          value="{{stateVal}}"
+          ></oj-c-input-text>
+
+        <oj-c-input-text
+          id="zip"
+          label-hint="city"
+          value="{{city}}"></oj-c-input-text>
+
+      </oj-c-form-layout>
+
+    </oj-c-form-layout>
+
+    <oj-c-form-layout direction="row"  max-columns="3" >
+
+      <oj-c-input-text
+      id="phone"
+      label-hint="Phone"
+      value="{{phonenumber}}"></oj-c-input-text>
+
+    <oj-c-input-text
+      id="email"
+      label-hint="Email"
+      value="{{email}}"></oj-c-input-text>
+
+    <oj-input-date
+      label-hint="Date of Birth"
+      pattern="\d{4}-\d{2}-\d{2}"
+      value="{{dob}}"></oj-input-date>
+
+    </oj-c-form-layout>
+
+    <div class="button-container">
+    <oj-c-button
+    id="continue"
+    chroming="callToAction"
+    on-oj-action="[[buttonClick]]"
+    label="Submit">
+  </oj-c-button>
+
+  <!-- <oj-table
+  id="table"
+  data="[[dataprovider]]"
+  class="demo-table-container"
+  columns='[{"headerText": "firstname", "field": "emailId", "id": "depId"}
+            ]'
+  >
+  </oj-table> -->
+</div>
+
+</div>

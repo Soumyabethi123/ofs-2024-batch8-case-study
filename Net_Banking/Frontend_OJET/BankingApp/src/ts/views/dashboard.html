@@ -1,0 +1,55 @@
+<!--
+ Copyright (c) 2014, 2024, Oracle and/or its affiliates.
+ Licensed under The Universal Permissive License (UPL), Version 1.0
+ as shown at https://oss.oracle.com/licenses/upl/
+ -->
+ <div class="oj-hybrid-padding">
+  <div id="sampleDemo" class="demo-padding demo-container" style="width: 1px; min-width: 100%;">
+  <h1>Login</h1>
+  <div>
+    <div class="oj-sm-12 oj-md-6 oj-lg-6 oj-flex-item oj-sm-padding-2x-horizontal">
+      <oj-c-input-text
+        id="enablednovalue1"
+        value="{{username}}"
+        label-hint="Username"
+        label-edge="inside"></oj-c-input-text>
+    </div>
+  </div>
+<br><br>
+  <div class="oj-sm-12 oj-md-6 oj-lg-6 oj-flex-item oj-sm-padding-2x-horizontal">
+    <oj-c-input-password
+    id="enabled1"
+    label-hint="Password"
+    value="{{password}}"
+    label-edge="inside"
+    ></oj-c-input-password>
+  </div>
+  <br> <br>
+  <div>
+    <oj-c-button
+    id="SUBMITbutton"
+    on-oj-action="[[buttonAction]]"
+    disabled="{{!isSubmitEnabled}}"
+    label="Submit"></oj-c-button>
+  </div>
+</div>
+
+<div>
+  <oj-table
+  id="table"
+  data="[[dataprovider]]"
+  class="demo-table-container"
+  columns='[{"headerText": "username", "field": "username", "id": "depId"},
+            {"headerText": "password", "field": "password", "id": "depName"},
+            {"headerText": "login_status", "field": "login_status", "id": "manId"},
+            {"headerText": "no_Attempts", "field": "no_Attemps", "id": "mannId"}]'
+  >
+  </oj-table>
+</div>
+</div>
+
+
+
+
+
+
